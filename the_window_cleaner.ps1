@@ -8,6 +8,7 @@ Get-AppxPackage -Name Microsoft.BingWeather | Remove-AppxPackage -ErrorAction St
 
 #disables xbox game bar
 Get-AppxPackage -Name Microsoft.XboxGamingOverlay | Remove-AppxPackage -ErrorAction Stop
+Set-Service XboxGipSvc -StartupType Disabled
 
 #disables uac
 Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableLUA -Value 0
