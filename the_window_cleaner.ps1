@@ -19,6 +19,6 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 #dark theme for my eyes
 New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type DWord
 
-#godmode shortcut on desktop
-$GodModePath = "$env:USERPROFILE\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
+#godmode shortcut on taskbar
+$GodModePath = "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 New-Item -ItemType Directory -Force -Path $GodModePath
