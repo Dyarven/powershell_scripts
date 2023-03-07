@@ -3,7 +3,7 @@
 #bye bye my dear cortana 
 Get-AppxPackage -Name Microsoft.549981C3F5F10 | Remove-AppxPackage
 
-#why would i want the weather forecast, i have a phone
+#why would i want the weather forecast
 Get-AppxPackage -Name Microsoft.BingWeather | Remove-AppxPackage -ErrorAction Stop
 
 #disables xbox game bar
