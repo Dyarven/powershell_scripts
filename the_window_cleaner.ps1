@@ -34,5 +34,10 @@ $PathValue = [Environment]::GetEnvironmentVariable("Path", "Machine")
 $PathValue = $PathValue -replace [regex]::Escape($WindowsPowerShellPath), $PowerShellPath
 [Environment]::SetEnvironmentVariable("Path", $PathValue, "Machine")
 
+#install vscode
+Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" -OutFile "$HOME\Downloads\VSCodeUserSetup-latest.exe"
+$file = Get-ChildItem "$HOME\Downloads\VSCodeUserSetup*.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+Start-Process -FilePath "$($file.FullName)" -ArgumentList "/silent /mergetasks=!runcode /suppressmsgboxes /log log.txt" -Wait
+
 #refresh env vars
 Stop-Process -Name explorer
