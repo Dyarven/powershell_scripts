@@ -1,6 +1,10 @@
 #makes windows less of a pain after a clean install
 
-#bye bye my dear cortana 
+#remove search highlights/search bar
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Value "0"
+
+#bye bye my dear cortana (disable and remove package)
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
 Get-AppxPackage -Name Microsoft.549981C3F5F10 | Remove-AppxPackage
 
 #weather with(out) you
