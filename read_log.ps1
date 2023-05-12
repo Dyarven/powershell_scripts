@@ -1,4 +1,4 @@
-$logfile = "C:\path\to\log\file.log"
+$logfile = "C:\folderx\foldery\file.log"
 
 if(Test-Path $logfile) {
     Get-Content $logfile -Wait
