@@ -25,7 +25,7 @@ $uninstallResults = foreach ($singleInstall in $installs)
 New-Item $folderPath -itemType Directory
 $uninstallResults | Where-Object Uninstall -match 'MsiExec.exe' | Where-Object DisplayName -match 'SQL' >> $folderPath\regValues.txt
 
-#clean the text file 
+#clean the text file to read it easily and iterate through it later
 (Get-Content $folderPath\regValues.txt | Where-Object {$_.readcount -lt 1 -or $_.readcount -gt 3}) | Set-Content $folderPath\regValues.txt
 (Get-Content $folderPath\regValues.txt) -replace ".+.exe ","" | Set-Content $folderPath\regValues.txt
 
