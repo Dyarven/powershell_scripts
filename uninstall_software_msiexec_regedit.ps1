@@ -45,5 +45,13 @@ foreach ($argument in $file) {
     $process = Start-Process MsiExec.exe -ArgumentList "$argument" -Wait
 }
 
+#finally, run the uninstaller in unattendeded mode, for all instances (or a specified one)
+try {
+    & "C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\SQL2019\x64\SetupARP.exe" /x /q /instancename=*
+    Write-Host "SQL Server Desinstalado OK."
+} catch {
+    Write-Host "Error desinstalando SQL Server: $($_.Exception.Message)"
+}
+
 #delete script files
 Remove-Item $folderPath -Force  -Recurse -ErrorAction SilentlyContinue
