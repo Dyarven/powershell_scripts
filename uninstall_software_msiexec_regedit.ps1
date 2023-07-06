@@ -1,4 +1,4 @@
-#script is set up to perform a complete MSSQL removal from registry executing every MsiExec.exe entry related to the program
+#script is set up to perform a complete MSSQL removal from registry executing every MsiExec.exe entry related to the program and the uninstaller afterwards
 
 $key = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall'
 $folderPath = 'C:\install\reg_temp'
