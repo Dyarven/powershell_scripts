@@ -1,13 +1,13 @@
 Import-Module ActiveDirectory
 
-#Define the Domain Controller
+# define the Domain Controller
 $dc = "Sample"
 
-#searchbase specifies to Get-ADComputer where to start. In this case it will look inside the OU=Desktops, which is inside the OU=Devices, in the domain Sample.whatever.com
-#If you are checking for devices inside the default Computers OU, you could omit using searchbase and just specify the domain within a variable. Then look for $device.$domain using the Get-ADComputer cmdlet.
+# searchbase specifies to Get-ADComputer where to start. In this case it will look inside the OU=Desktops, which is inside the OU=Devices, in the domain Sample.whatever.com
+# If you are checking for devices inside the default Computers OU, you could omit using searchbase and just specify the domain within a variable. Then look for $device.$domain using the Get-ADComputer cmdlet.
 $ou = "OU=Desktops,OU=Devices,DC=Sample,DC=whatever,DC=com"
 
-#csv file needs 2 columns: oldDevice and newDevice
+# csv file needs 2 columns: oldDevice and newDevice
 $file = "dispositivos.csv"
 $devices = Import-Csv $file
 
