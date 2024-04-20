@@ -1,6 +1,6 @@
 Connect-AzAccount
 
-# Get network security groups
+# get network security groups
 $nsgs = Get-AzNetworkSecurityGroup
 
 foreach ($nsg in $nsgs) {
@@ -13,7 +13,7 @@ foreach ($nsg in $nsgs) {
         } 
     }
 
-    # Only set the NSG if rules were removed
+    # only set the NSG if rules were removed
     if ($nsgRules -ne $null) {
         $nsg | Set-AzNetworkSecurityGroup
     }
