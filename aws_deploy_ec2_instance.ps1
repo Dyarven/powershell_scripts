@@ -1,4 +1,4 @@
-#requires AWSPowerShell module and asumes aws credentials are already configured
+# requires AWSPowerShell module and asumes aws credentials are already configured
 
 # params
 $Region = "eu-south-2"
